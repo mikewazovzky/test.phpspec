@@ -4,7 +4,7 @@ var run = require('gulp-run');
 var notify = require('gulp-notify');
 
 gulp.task('test', function() {
-	gulp.src('spec/**/*.php')
+	gulp.src('spec/*.php')   // 'spec/**/*.php'
 		.pipe(run('clear'))
 		.pipe(phpspec('', { notify: true }))
 		.on('error', notify.onError({
@@ -16,7 +16,7 @@ gulp.task('test', function() {
 		.pipe(notify({
 			title: 'Success',
 			message: 'All tests passed!',
-			//icon: __dirname + '/success.png'
+			icon: __dirname + '/success.png'
 		}));
 });
 
